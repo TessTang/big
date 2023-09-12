@@ -6,6 +6,11 @@
     font-weight: 700;
     font-family: arial,"Microsoft JhengHei";
 } */
+.card-img-top {
+    height: 18rem ;
+    object-fit: cover;
+
+}
 
 .blogView{
     overflow: hidden;
@@ -28,6 +33,14 @@
     margin-block-start: 0;
     padding-inline-start: 0;
 
+}
+
+.cardAt {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-decoration: none
 }
 
 .myNavbar>ul>li {

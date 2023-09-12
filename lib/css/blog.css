@@ -32,13 +32,13 @@
 }
 
 
-.myNavbar>ul>li>a{
+.myNavbar>ul>li>a {
     display: block;
     text-decoration: none;
     color: rgb(31, 2, 2);
 }
 
-.pageset>a{
+.pageset>a {
     text-decoration: none;
     color: rgb(31, 2, 2);
 }
@@ -74,7 +74,7 @@
 }
 
 
-.card:hover>img {
+.card:hover img {
     opacity: 0.7;
     -webkit-transform: scale(1.07);
     -moz-transform: scale(1.07);
@@ -83,17 +83,25 @@
     transform: scale(1.07);
 }
 
-.card:hover>.card-body {
+.card:hover .card-body {
     margin-top: 3px;
     transform: scale(1.03);
 }
 
+.cardAt {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-decoration: none
+}
 
-.card>img {
-    height: 18rem;
+/* .card-img-top {
+    height: 18rem !important;
+    width: 500px;
     object-fit: cover;
 
-}
+} */
 
 .articleIcon {
     display: flex;
@@ -223,44 +231,50 @@
     margin-left: 5px;
     font-size: 18px;
     transition: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    
+
 }
 
 /* blog-page */
-.blog_page > ul{
+.blog_page>ul {
     display: flex;
     list-style: none;
     justify-content: center;
 }
 
-.blog_page > ul li>a{
+.blog_page>ul li>a {
     color: rgb(54, 39, 6);
 }
 
-.card-img-top{
-    object-fit: contain;
+.card-img-top {
+    object-fit: cover;
     object-position: 10% 10%;
-    max-height: 100%;
+    height: 18rem;
 }
 
-.blogView{
+.blogView {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    color: #2f1b00;
 }
 
-.blogTitle{
+.blogInscon{
+    margin-top: 120px;
+}
+
+.blogTitle {
     font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+    color: #2f1b00;
 }
 
-.hottitle{
+.hottitle {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -269,7 +283,7 @@
     font-weight: 600;
 }
 
-.hotspan{
+.hotspan {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -293,7 +307,7 @@
     height: 56px;
 }
 
-.blogtime{
+.blogtime {
     text-align: end;
     margin-right: 1rem;
 }
@@ -311,11 +325,11 @@
     width: 45px;
 }
 
-.searchMoredown{
+.searchMoredown {
     display: none;
 }
 
-.searchMore > button{
+.searchMore>button {
     padding-left: 0;
     width: 30px;
     height: 100%;
@@ -337,8 +351,10 @@ padding-left: 50px;
     margin: 0 5%;
 
 }
+
 .hotArt>div:hover {
     width: 95%;
+    background-color: #33333319;
 }
 
 .hotArt>div>img {
@@ -354,57 +370,59 @@ padding-left: 50px;
 
 }
 
-.hotTag,.postTag{
+.hotTag,
+.postTag {
     list-style: none;
     padding-left: 0;
     margin: 0 auto;
     flex-wrap: wrap;
 }
 
-.hotTag button,.postTag button{
+.hotTag button,
+.postTag button {
     /* min-width: 50px; */
     width: 100%;
-    white-space:nowrap;
+    white-space: nowrap;
 }
 
-.form-control{
+.form-control {
     height: 100px;
 }
 
-.commentImg{
-    width:100px;
+.commentImg {
+    width: 100px;
     height: 100px;
 }
 
 
-.commentMedia img{
-    max-width:100px;
+.commentMedia img {
+    max-width: 100px;
 }
 
-.commentMedia{
+.commentMedia {
     border-bottom: solid 1px;
     padding-top: 1rem;
 }
 
 /* activity */
-.actcol > a{
+.actcol>a {
     text-decoration: none;
     color: #2f1b00;
 }
 
-.content{
+.content {
     height: 300px;
     padding: 16px;
 }
 
-.content>div>p{
+.content>div>p {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
 }
 
-.actcol a:nth-child(even) .content{
+.actcol a:nth-child(even) .content {
     flex-direction: row-reverse;
 }
 
@@ -412,12 +430,12 @@ padding-left: 50px;
     border-top: 1px solid #dee2e6;
 }
 
-.content:hover{
+.content:hover {
     background-color: #23030317;
 }
 
 /* activ-lotto */
-.lottoBg{
+.lottoBg {
     /* display: none; */
     visibility: hidden;
     opacity: 0;
@@ -430,8 +448,9 @@ padding-left: 50px;
     z-index: 30;
     background: #333333d6;
 }
-.lottoOuter{
-    
+
+.lottoOuter {
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -440,7 +459,7 @@ padding-left: 50px;
     color: aliceblue
 }
 
-.lottoContainer{
+.lottoContainer {
     position: relative;
     width: 400px;
     height: 400px;
@@ -449,13 +468,13 @@ padding-left: 50px;
     align-items: center;
 }
 
-.lottoContainer > .spinBtn{
+.lottoContainer>.spinBtn {
     position: absolute;
     width: 60px;
     height: 60px;
-    background:#fff; 
-    border-radius:50%;
-    z-index: 10; 
+    background: #fff;
+    border-radius: 50%;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -463,12 +482,12 @@ padding-left: 50px;
     font-weight: 600;
     color: #333;
     letter-spacing: 0. 1em;
-    border: 4px solid rgba(0,0,0,0.75);
+    border: 4px solid rgba(0, 0, 0, 0.75);
     cursor: pointer;
     user-select: none;
 }
 
-.lottoContainer > .spinBtn::before{
+.lottoContainer>.spinBtn::before {
     content: '';
     position: absolute;
     top: -28px;
@@ -478,7 +497,7 @@ padding-left: 50px;
     clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
 }
 
-.lottoContainer > .wheel{
+.lottoContainer>.wheel {
     position: absolute;
     top: 0;
     left: 0;
@@ -488,12 +507,12 @@ padding-left: 50px;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 0 5px #333,
-    0 0 0 15px #fff,
-    0 0 0 18px #111;
+        0 0 0 15px #fff,
+        0 0 0 18px #111;
     /* transition: transform 5s ease-in-out; */
 }
 
-.lottoContainer .wheel .number{
+.lottoContainer .wheel .number {
     position: absolute;
     width: 50%;
     height: 50%;
@@ -508,9 +527,9 @@ padding-left: 50px;
     cursor: pointer;
 }
 
-.lottoContainer .wheel .number span{
+.lottoContainer .wheel .number span {
     padding-left: 20px;
-    position:relative;
+    position: relative;
     transform: rotate(45deg);
     font-size: 2em;
     font-weight: 700;
@@ -518,11 +537,11 @@ padding-left: 50px;
     text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
 }
 
-.lottoContainer .wheel .number span::after{
+.lottoContainer .wheel .number span::after {
     content: '點';
 }
 
-.closeBtn{
+.closeBtn {
     /* width: 30px;
     height: 30px;
     color: rgb(91, 31, 3);
@@ -532,12 +551,12 @@ padding-left: 50px;
     right: 2rem;
 }
 
-.lottop{
+.lottop {
     position: fixed;
     top: 8rem;
     right: 25%;
 }
 
-.tryy{
+.tryy {
     color: red;
 }

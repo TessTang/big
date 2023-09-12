@@ -39,38 +39,22 @@
     <!-- navbar end -->
 
     <!-- wrap -->
-    <div class="container d-flex gap-3 flex-md-row flex-column mt-5">
+    <div class="container d-flex gap-3 flex-md-row flex-column blogInscon">
+
 
         <!-- article -->
 
         <div class="col-md-7 col-lg-9 g-3 mb-5">
-            <h3 class="vg-h3"><%- data[0].atcTitle  %></h3>
-            <div class="blogtime">2023.09.08</div>
+            <h3 class="vg-h3"><%- data.article[0].atcTitle  %></h3>
+            <div class="blogtime"><%- data.article[0].atcTime  %></div>
             <div class="w-100">
                 <img class="w-100"
-                    src="https://taiwan-bonbon-farmer.com/wp-content/uploads/2023/06/%E9%B3%B3%E6%A2%A8%E9%85%B5%E7%B4%A0%E5%9C%A8%E5%A4%AF%E7%94%9A%E9%BA%BC.jpg"
+                    src="<%- data.article[0].atcimg  %>"
                     alt="">
                 <div>
+                    <br>
                     <!-- 資料庫 -->
-                    <p><span>近年來，鳳梨酵素成為了一項非常流行的營養保健話題；鳳梨酵素指的是從鳳梨中提取的一種天然酵素，具有多種保健功效和美容效果，它含有豐富的蛋白酶、纖維素酶和果酸等成分，被認為對消化、排毒、抗發炎、瘦身等方面有益處。</span>
-                    </p>
-                    <p><strong><span style="color: #993300;"><span><strong><span
-                                            style="color: #993300;">►鳳梨酵素能幫助消化，來自於蛋白酶與纖維素酶</span></strong></span></span></strong>
-                    </p>
-                    <p><span>鳳梨酵素在消化方面具有顯著的作用，其中2大成份助益最大就是<strong><span
-                                    style="color: #993300;">蛋白酶</span></strong><span>與</span><strong><span
-                                    style="color: #993300;">纖維素酶</span></strong>，蛋白酶可以幫助分解蛋白質，促進食物的消化和吸收，減輕胃腸負擔。纖維素酶則有助於分解纖維素，促進腸道蠕動，緩解便秘問題。此外，鳳梨酵素還含有豐富的果酸，能促進胃酸分泌，改善消化不良。</span>
-                    </p>
-                    <p><strong><span style="color: #993300;"><span>►鳳梨酵素有助於抗炎和抗氧化，還有天然去角質作用</span></span></strong></p>
-                    <p><span>鳳<span style="color: #993300;"><span
-                                    style="color: #000000;">梨酵素還被廣泛應用於美容領域，具有天然的去角質作用，可以去除死皮細胞，使肌膚更加光滑細緻。同時，鳳梨酵素還具有抗炎和抗氧化的特性，可以減少皮膚細胞的氧化損傷，抑制黑色素的生成，使皮膚更加明亮均勻。</span></span></span><span
-                            style="color: #993300;"><span style="color: #000000;"><br>
-                            </span></span></p>
-                    <h5 class="vg-h5">
-                        <span>由於鳳梨酵素具有多種保健和美容功效，因此在市場上越來越受到關注，許多人選擇食用鳳梨酵素補充劑或使用含有鳳梨酵素成分的護膚產品，來達到想要實現健康的願景。<span
-                                style="color: #ff0000;">但是使用這些產品前，應該注意每個人的身體狀況和需求不同，建議在使用鳳梨酵素前諮詢專業意見，確保安全和適當的使用方式。</span></span>
-                    </h5>
-
+                    <%- data.article[0].atcText  %>
                 </div>
             </div>
             <div class="articleIcon mt-5">
@@ -134,15 +118,10 @@
                 <span class="tags-label screen-reader-text">
                     Post Tags: </span>
                 <div class="gap-2 postTag d-flex pt-3">
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">幫助消化</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">抗發炎</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">排毒</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">纖維素酶</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">蛋白酶</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">鳳梨酵素</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">鳳梨酵素</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">鳳梨酵素</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">鳳梨酵素</button></a>
+                    <% data.tags.forEach(function(tag) { %>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm"><%- tag.tagname %></button></a>
+                    <% }); %>
+
                 </div>
                 <!-- 留言區塊 -->
                 <section class="blogComment mt-3 ms-0">
@@ -274,41 +253,44 @@
             <!-- hot -->
             <div>
                 <h4 class="vg-h4 mt-3 ">熱門標籤</h4>
-                <div class="hotTag d-flex flex-wrap justify-content-center gap-1">
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
+                <div class="hotTag d-flex flex-wrap justify-content-center gap-1 mt-3">
+                
                 </div>
                 <hr>
                 <div>
                     <h4 class="vg-h4 mt-3">熱門文章</h4>
                     <div class="hotArt">
                         <div class="d-flex mt-3">
-                            <img src="./img/blog-03.jpeg" alt="">
-                            <div class="hotArtcontent">
-                                <p class="vg-h5">title</p>
-                                <span class="vg-p">articleß</span>
+                            <img src="https://cw1.tw/CH/images/channel_master/5a5a6829-34f5-4463-b486-e5a116f1caa8.jpg" alt="">
+                            <div class="hotArtcontent"  onclick="window.open(`/blog/inside/2`,'_self')";>
+                                <p class="vg-h5 hottitle">
+                                    覺得疲倦是因為缺少這5種食物！
+                                </p>
+                                <span class="vg-p hotspan">
+                                    每天都覺得累，卻永遠也睡不飽嗎？小心這是沉默的器官「肝臟」發出的警告！現代人生活忙碌，時常暴飲暴食，
+                                </span>
                             </div>
                         </div>
                         <div class="d-flex mt-3">
-                            <img src="./img/blog-05.jpeg" alt="">
+                            <img src="https://taiwan-bonbon-farmer.com/wp-content/uploads/2016/11/k2_items_src_7586bcdd7a745d843a3897512742ccdb.jpg.webp" alt="">
                             <div class="hotArtcontent">
-                                <p class="vg-h5">title</p>
-                                <span class="vg-p">articleß</span>
+                                <p class="vg-h5 hottitle">
+                                    冬天預防感冒，橘子最好，但你知道嗎?橘皮也很有用處啊
+                                </p>
+                                <span class="vg-p hotspan">
+                                    冬天盛產柑橘類，每次吃橘子，我都先將外橘皮洗乾淨、擦乾，然後完整的剝下外
+                                </span>
                             </div>
                         </div>
                         <div class="d-flex mt-3">
-                            <img src="./img/blog-04.jpeg" alt="">
+                            <img src="https://taiwan-bonbon-farmer.com/wp-content/uploads/2022/06/wmpineapple001b.jpg" alt="">
                             <div class="hotArtcontent">
-                                <p class="vg-h5">title</p>
-                                <span class="vg-p">articleß</span>
+                                <p class="vg-h5 hottitle">
+                                    巨無霸西瓜鳳梨 新品種超熱銷
+                                </p>
+                                <span class="vg-p hotspan">
+                                    「這粒鳳梨怎麼那麼大，是一般鳳梨的2、3倍大吧」，這是高樹果農郭智偉嘗試新品種鳳梨，尚未正式命
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -333,18 +315,31 @@
     <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
 
     <script>$(document).ready(function () {
-
-        $('#includetag').selectivity({
-            items: ['鳳梨', '蘋果', '健康', '排毒', '南瓜', '鳳梨酵素', '水果', '纖維'/*, ...*/],
-            multiple: true,
-            placeholder: '搜尋標籤'
-        });
-
-        $('#notag').selectivity({
-            items: ['鳳梨', '蘋果', '健康', '排毒', '南瓜', '鳳梨酵素', '水果', '纖維'/*, ...*/],
-            multiple: true,
-            placeholder: '搜尋標籤'
-        });
+        var itemTag = [];
+        fetch('/blog/tags')
+            .then(function (res) {
+                return res.json();
+            })
+            .then(function (jsonObj) {
+                // console.log(jsonObj[0].tagname);
+                for (var i = 1; i < jsonObj.length; i++) {
+                    itemTag.push(jsonObj[i].tagname);
+                }
+                $('#includetag').selectivity({
+                    items: itemTag,
+                    multiple: true,
+                    placeholder: '搜尋'
+                });
+                $('#notag').selectivity({
+                    items: itemTag,
+                    multiple: true,
+                    placeholder: '搜尋'
+                });
+                for (let i = 1; i < 10; i++) {
+                    // console.log($('.hotTag'));
+                    $('.hotTag').prepend(`<a href=""><button class="btn btn-vg-xs shadow-sm">${itemTag[i]}</button></a>`);
+                }
+            })
 
 
     });</script>

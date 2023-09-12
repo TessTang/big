@@ -44,10 +44,13 @@
                 <div class="row g-3">
                     <!-- card1 -->
                     <% for (let i=0; i < data.length; i++){ %>
-                        <a href="/blog/inside/<%- data[i].atcid  %>">
-                            <div class="col-12 col-lg-6">
-                                <div class="card">
-                                    <img src="<%- data[i].atcimg %>" class="card-img-top img-fluid" alt="art1">
+
+                        <div class="col-12 col-lg-6">
+                            <div class="card">
+                                <a href="/blog/inside/<%- data[i].atcid  %>" class="cardAt">
+                                    <div >
+                                        <img src="<%- data[i].atcimg %>" class="card-img-top" alt="art1">
+                                    </div>
                                     <div class="card-body">
                                         <h4 class="vg-h4 blogTitle">
                                             <%= data[i].atcTitle %>
@@ -117,26 +120,27 @@
                                             </a>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
-                            <%　}　%>
+                        </div>
+                        <%　}　%>
 
-                                <div class="blog_page">
-                                    <ul class="gap-3 pageset">
-                                        <% for (let i=1; i <=last_page; i++){ %>
+                            <div class="blog_page">
+                                <ul class="gap-3 pageset">
+                                    <% for (let i=1; i <=last_page; i++){ %>
 
-                                            <a href="<%= i %>">
-                                                <%= i %>
+                                        <a href="<%= i %>">
+                                            <%= i %>
+                                        </a> &nbsp;&nbsp;
+
+                                        <% } %>
+
+                                            <a href="/blog/page/<%= next_page %>">
+                                                下一頁
                                             </a> &nbsp;&nbsp;
-
-                                            <% } %>
-
-                                                <a href="/blog/page/<%= next_page %>">
-                                                    下一頁
-                                                </a> &nbsp;&nbsp;
-                                    </ul>
-                                </div>
-                        </a>
+                                </ul>
+                            </div>
+                            </a>
                 </div>
 
 
@@ -192,7 +196,7 @@
                     <!-- hot -->
                     <div>
                         <h4 class="vg-h4 mt-3 ">熱門標籤</h4>
-                        <div class="hotTag d-flex flex-wrap justify-content-center gap-1">
+                        <div class="hotTag d-flex flex-wrap justify-content-center gap-1 mt-3">
 
                         </div>
                         <hr>
@@ -200,35 +204,35 @@
                             <h4 class="vg-h4 mt-3">熱門文章</h4>
                             <div class="hotArt">
                                 <div class="d-flex mt-3">
-                                    <img src="<%= data[1].atcimg %>" alt="">
-                                    <div class="hotArtcontent">
+                                    <img src="https://cw1.tw/CH/images/channel_master/5a5a6829-34f5-4463-b486-e5a116f1caa8.jpg" alt="">
+                                    <div class="hotArtcontent"  onclick="window.open(`/blog/inside/2`,'_self')";>
                                         <p class="vg-h5 hottitle">
-                                            <%= data[1].atcTitle %>
+                                            覺得疲倦是因為缺少這5種食物！
                                         </p>
                                         <span class="vg-p hotspan">
-                                            <%= data[1].atcText %>
+                                            每天都覺得累，卻永遠也睡不飽嗎？小心這是沉默的器官「肝臟」發出的警告！現代人生活忙碌，時常暴飲暴食，
                                         </span>
                                     </div>
                                 </div>
                                 <div class="d-flex mt-3">
-                                    <img src="<%= data[5].atcimg %>" alt="">
+                                    <img src="https://taiwan-bonbon-farmer.com/wp-content/uploads/2016/11/k2_items_src_7586bcdd7a745d843a3897512742ccdb.jpg.webp" alt="">
                                     <div class="hotArtcontent">
                                         <p class="vg-h5 hottitle">
-                                            <%= data[5].atcTitle %>
+                                            冬天預防感冒，橘子最好，但你知道嗎?橘皮也很有用處啊
                                         </p>
                                         <span class="vg-p hotspan">
-                                            <%= data[5].atcText %>
+                                            冬天盛產柑橘類，每次吃橘子，我都先將外橘皮洗乾淨、擦乾，然後完整的剝下外
                                         </span>
                                     </div>
                                 </div>
                                 <div class="d-flex mt-3">
-                                    <img src="<%= data[4].atcimg %>" alt="">
+                                    <img src="https://taiwan-bonbon-farmer.com/wp-content/uploads/2022/06/wmpineapple001b.jpg" alt="">
                                     <div class="hotArtcontent">
                                         <p class="vg-h5 hottitle">
-                                            <%= data[4].atcTitle %>
+                                            巨無霸西瓜鳳梨 新品種超熱銷
                                         </p>
                                         <span class="vg-p hotspan">
-                                            <%= data[4].atcText %>
+                                            「這粒鳳梨怎麼那麼大，是一般鳳梨的2、3倍大吧」，這是高樹果農郭智偉嘗試新品種鳳梨，尚未正式命
                                         </span>
                                     </div>
                                 </div>
@@ -323,18 +327,36 @@
                             $('#includetag').selectivity({
                                 items: itemTag,
                                 multiple: true,
-                                placeholder: '搜尋標籤'
+                                placeholder: '搜尋'
                             });
                             $('#notag').selectivity({
                                 items: itemTag,
                                 multiple: true,
-                                placeholder: '搜尋標籤'
+                                placeholder: '搜尋'
                             });
-                            for (let i = 1; i < 9; i++) {
+                            for (let i = 1; i < 10; i++) {
                                 // console.log($('.hotTag'));
                                 $('.hotTag').prepend(`<a href=""><button class="btn btn-vg-xs shadow-sm">${itemTag[i]}</button></a>`);
                             }
                         })
+                        let tagxatcid = [];
+
+                        fetch('/blog/tag/:id')
+                        .then(function (res) {
+                            return res.json();
+                        })
+                        .then(function (jsonObj) {
+                            console.log(jsonObj[0].atcid);
+                            for (var i = 1; i < jsonObj.length; i++) {
+                                tagxatcid.push(jsonObj[i].atcid);
+                            }
+                            
+                            for (let i = 1; i < jsonObj.length; i++) {
+                                // console.log($('.hotTag'));
+                                $('.hotTag>a').attr('href',`/blog/tag/${tagxatcid[i]}`);
+                            }
+                        })
+
 
 
                 });</script>
