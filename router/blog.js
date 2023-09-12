@@ -74,8 +74,23 @@ blog.get('/tags', function(req, res){
 
 
 
-blog.get('/inside', function(req, res){
-    res.send('HEllo inside');
+blog.get('/inside/:id', function(req, res){
+    var art_id = req.params.id;
+    var sql2 = "select * from article where atcid = ?;"
+    var data = [req.params.id];
+    db.query(sql2, data, function(err, art){
+        if(err){
+            console.log('抓文章失敗');
+            console.log(err);
+        } else {
+            console.log(art);
+            res.render('blog_inside',{
+                data: art
+            })
+        }
+    })
+    // console.log(art_id);
+    // res.render('blog_inside');
 })
 
 module.exports = blog;

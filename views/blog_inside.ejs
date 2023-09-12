@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('share/head_link.ejs') %>
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/selectivity-jquery.min.css">
+    
+</head>
+
+<body>
+
+    <!-- header -->
+    <%- include('share/header.ejs')%>
+    
+    <!-- 主navbar這裡結束 -->
+
+    <!-- 文章Navbar這裡開始 -->
+    <!-- <div style="height: 125px;"></div>
+    <div id="vg-navbar-2">
+        <a class="btn-vg-3" href="javascript:void(0)">農產品</a>
+        <a class=" btn-vg-3" href="javascript:void(0)">健康</a>
+        <a class=" btn-vg-3" href="javascript:void(0)">食譜</a>
+    </div> -->
+    <!-- 文章Navbar這裡結束 -->
+
+    <!-- header end -->
+    <!-- navbar -->
+    <!-- <nav class="myNavbar">
+        <ul class="d-flex">
+            <li><a href="#">農產品</a></li>
+            <li><a href="#">健康</a></li>
+            <li><a href="#">食譜</a></li>
+        </ul>
+    </nav> -->
+    <!-- navbar end -->
+
+    <!-- wrap -->
+    <div class="container d-flex gap-3 flex-md-row flex-column mt-5">
+
+        <!-- article -->
+
+        <div class="col-md-7 col-lg-9 g-3 mb-5">
+            <h3 class="vg-h3"><%- data[0].atcTitle  %></h3>
+            <div class="blogtime">2023.09.08</div>
+            <div class="w-100">
+                <img class="w-100"
+                    src="https://taiwan-bonbon-farmer.com/wp-content/uploads/2023/06/%E9%B3%B3%E6%A2%A8%E9%85%B5%E7%B4%A0%E5%9C%A8%E5%A4%AF%E7%94%9A%E9%BA%BC.jpg"
+                    alt="">
+                <div>
+                    <!-- 資料庫 -->
+                    <p><span>近年來，鳳梨酵素成為了一項非常流行的營養保健話題；鳳梨酵素指的是從鳳梨中提取的一種天然酵素，具有多種保健功效和美容效果，它含有豐富的蛋白酶、纖維素酶和果酸等成分，被認為對消化、排毒、抗發炎、瘦身等方面有益處。</span>
+                    </p>
+                    <p><strong><span style="color: #993300;"><span><strong><span
+                                            style="color: #993300;">►鳳梨酵素能幫助消化，來自於蛋白酶與纖維素酶</span></strong></span></span></strong>
+                    </p>
+                    <p><span>鳳梨酵素在消化方面具有顯著的作用，其中2大成份助益最大就是<strong><span
+                                    style="color: #993300;">蛋白酶</span></strong><span>與</span><strong><span
+                                    style="color: #993300;">纖維素酶</span></strong>，蛋白酶可以幫助分解蛋白質，促進食物的消化和吸收，減輕胃腸負擔。纖維素酶則有助於分解纖維素，促進腸道蠕動，緩解便秘問題。此外，鳳梨酵素還含有豐富的果酸，能促進胃酸分泌，改善消化不良。</span>
+                    </p>
+                    <p><strong><span style="color: #993300;"><span>►鳳梨酵素有助於抗炎和抗氧化，還有天然去角質作用</span></span></strong></p>
+                    <p><span>鳳<span style="color: #993300;"><span
+                                    style="color: #000000;">梨酵素還被廣泛應用於美容領域，具有天然的去角質作用，可以去除死皮細胞，使肌膚更加光滑細緻。同時，鳳梨酵素還具有抗炎和抗氧化的特性，可以減少皮膚細胞的氧化損傷，抑制黑色素的生成，使皮膚更加明亮均勻。</span></span></span><span
+                            style="color: #993300;"><span style="color: #000000;"><br>
+                            </span></span></p>
+                    <h5 class="vg-h5">
+                        <span>由於鳳梨酵素具有多種保健和美容功效，因此在市場上越來越受到關注，許多人選擇食用鳳梨酵素補充劑或使用含有鳳梨酵素成分的護膚產品，來達到想要實現健康的願景。<span
+                                style="color: #ff0000;">但是使用這些產品前，應該注意每個人的身體狀況和需求不同，建議在使用鳳梨酵素前諮詢專業意見，確保安全和適當的使用方式。</span></span>
+                    </h5>
+
+                </div>
+            </div>
+            <div class="articleIcon mt-5">
+                <a>
+                    <div class="con-like">
+                        <input title="like" type="checkbox" class="like check1">
+                        <div class="checkmark">
+                            <svg viewBox="0 0 24 24" class="outline" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" class="filled" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                </path>
+                            </svg>
+                            <svg class="celebrate" width="100" height="100"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20" class="poly"></polygon>
+                                <polygon points="10,50 20,50" class="poly"></polygon>
+                                <polygon points="20,80 30,70" class="poly"></polygon>
+                                <polygon points="90,10 80,20" class="poly"></polygon>
+                                <polygon points="90,50 80,50" class="poly"></polygon>
+                                <polygon points="80,80 70,70" class="poly"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+                <p class="likePeople" style="margin-left: -12px; padding: 3px;"></p>
+                <a>
+                    <div class="con-like con-keep">
+                        <input title="like" type="checkbox" class="like keep1">
+                        <div class="checkmark">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35px"
+                                height="35px" viewBox="0 0 24 24" class="outline">
+                                <path
+                                    d="M 6.0097656 2 C 4.9143111 2 4.0097656 2.9025988 4.0097656 3.9980469 L 4 22 L 12 19 L 20 22 L 20 20.556641 L 20 4 C 20 2.9069372 19.093063 2 18 2 L 6.0097656 2 z M 6.0097656 4 L 18 4 L 18 19.113281 L 12 16.863281 L 6.0019531 19.113281 L 6.0097656 4 z">
+                                </path>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35px"
+                                height="35px" viewBox="0 0 24 24" class="filled">
+                                <path
+                                    d="M 6 2 C 5.861875 2 5.7278809 2.0143848 5.5976562 2.0410156 C 4.686084 2.2274316 4 3.033125 4 4 L 4 22 L 12 19 L 20 22 L 20 4 C 20 3.8625 19.985742 3.7275391 19.958984 3.5976562 C 19.799199 2.8163086 19.183691 2.2008008 18.402344 2.0410156 C 18.272119 2.0143848 18.138125 2 18 2 L 6 2 z">
+                                </path>
+                            </svg>
+                            <svg class="celebrate" width="100" height="100"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="10,10 20,20" class="poly"></polygon>
+                                <polygon points="10,50 20,50" class="poly"></polygon>
+                                <polygon points="20,80 30,70" class="poly"></polygon>
+                                <polygon points="90,10 80,20" class="poly"></polygon>
+                                <polygon points="90,50 80,50" class="poly"></polygon>
+                                <polygon points="80,80 70,70" class="poly"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <span class="tags-links">
+                <span class="tags-label screen-reader-text">
+                    Post Tags: </span>
+                <div class="gap-2 postTag d-flex pt-3">
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">幫助消化</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">抗發炎</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">排毒</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">纖維素酶</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">蛋白酶</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">鳳梨酵素</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">鳳梨酵素</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">鳳梨酵素</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">鳳梨酵素</button></a>
+                </div>
+                <!-- 留言區塊 -->
+                <section class="blogComment mt-3 ms-0">
+                    <h3 class="vg-h3 mt-5">留言區</h3>
+                    <hr>
+                    <div>
+                        <div class="d-flex justify-content-between">
+                            <h4 class="vg-h4">我要留言</h4>
+                            <button type="submit" class="btn btn-vg">送出</button>
+                        </div>
+                        <fieldset class="row mt-3">
+                            <div class="d-none d-sm-block col-sm-3 col-lg-2">
+                                <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-9 col-lg-10">
+                                <textarea class="form-control" id="message" placeholder="我想說..." required=""></textarea>
+                            </div>
+                        </fieldset>
+                        <h4 class="vg-h4 mt-3"> 3個留言</h4>
+
+                        <!-- COMMENT 1 - START -->
+                        <div class="commentMedia d-flex pb-3 bt-1">
+                            <div><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt=""></div>
+                            <div class="media-body ps-3">
+                                <div class="d-flex justify-content-between">
+                                    <h4 class="media-heading">John Doe</h4>
+                                    <span>#1</span>
+                                </div>
+                                <p class="vg-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+                                    dolor sit amet,
+                                    consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
+                                    amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit.</p>
+
+                                <span><i class="fa fa-calendar pe-2"></i>27/02/2014</span>
+                            </div>
+                        </div>
+                        <!-- COMMENT 1 - END -->
+                        <!-- COMMENT 2 - START -->
+                        <div class="commentMedia d-flex pb-3 ">
+                            <div><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></div>
+                            <div class="media-body ps-3">
+                                <div class="d-flex justify-content-between">
+                                    <h4 class="media-heading">John Doe</h4>
+                                    <span>#2</span>
+                                </div>
+                                <p class="vg-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+                                    dolor sit amet,
+                                    consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
+                                    amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit.</p>
+
+                                <span><i class="fa fa-calendar pe-2"></i>27/02/2014</span>
+                            </div>
+                        </div>
+                        <!-- COMMENT 2 - END -->
+                        <!-- COMMENT 3 - START -->
+                        <div class="commentMedia d-flex pb-3 ">
+                            <div><img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt=""></div>
+                            <div class="media-body ps-3">
+                                <div class="d-flex justify-content-between">
+                                    <h4 class="media-heading">John Doe</h4>
+                                    <span>#3</span>
+                                </div>
+                                <p class="vg-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+                                    dolor sit amet,
+                                    consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
+                                    amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit.</p>
+
+                                <span><i class="fa fa-calendar pe-2"></i>27/02/2014</span>
+                            </div>
+                        </div>
+                        <!-- COMMENT 3 - END -->
+                    </div>
+        </div>
+
+
+        <!-- article end -->
+        <!-- rightrow -->
+        <div class="col-md-5 col-lg-3 vg-bd-5 border rightRow">
+            <!-- search -->
+            <div class="d-flex m-3 searchRow">
+                <div class="form-floating mb-3 w-75">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="搜尋">
+                    <label for="floatingInput">搜尋</label>
+                </div>
+                <button class="btn btn-vg serchButton"><i class="bi bi-search"></i></button>
+
+
+            </div>
+            <div class="d-flex justify-content-center searchMore">
+                <h5 class="vg-h4">進階搜尋</h5>
+                <button class="btn btn-vg-sm"><i class="bi bi-caret-down-square-fill ps-2"></i></button>
+            </div>
+            <div class="searchMoredown">
+                <div class="m-3">
+                    <h5 class="vg-h5">包含標籤</h5>
+                    <div id="includetag" class="form-floating mb-3 w-75 selectivity-input example-input" tabindex="0">
+                        <div class="selectivity-multiple-input-container form-floating">
+                            <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
+                                class="form-control selectivity-multiple-input" size="23">
+                            <div class="selectivity-clearfix"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <h5 class="vg-h5">排除標籤</h5>
+                    <div id="notag" class="form-floating mb-3 w-75 selectivity-input example-input" tabindex="0">
+                        <div class="selectivity-multiple-input-container form-floating">
+                            <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
+                                class="form-control selectivity-multiple-input" size="23">
+                            <div class="selectivity-clearfix"></div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-vg m-2 shadow-sm">送出</button>
+                <br><br>
+            </div>
+
+            <!-- search end -->
+            <hr>
+            <!-- hot -->
+            <div>
+                <h4 class="vg-h4 mt-3 ">熱門標籤</h4>
+                <div class="hotTag d-flex flex-wrap justify-content-center gap-1">
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
+                    <a href=""><button class="btn btn-vg-xs shadow-sm">變更</button></a>
+                </div>
+                <hr>
+                <div>
+                    <h4 class="vg-h4 mt-3">熱門文章</h4>
+                    <div class="hotArt">
+                        <div class="d-flex mt-3">
+                            <img src="./img/blog-03.jpeg" alt="">
+                            <div class="hotArtcontent">
+                                <p class="vg-h5">title</p>
+                                <span class="vg-p">articleß</span>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-3">
+                            <img src="./img/blog-05.jpeg" alt="">
+                            <div class="hotArtcontent">
+                                <p class="vg-h5">title</p>
+                                <span class="vg-p">articleß</span>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-3">
+                            <img src="./img/blog-04.jpeg" alt="">
+                            <div class="hotArtcontent">
+                                <p class="vg-h5">title</p>
+                                <span class="vg-p">articleß</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- hot end -->
+        </div>
+        <!-- wrap end-->
+    </div>
+
+    <div class="vg-footer">
+        copyright
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/style.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+
+    <script>$(document).ready(function () {
+
+        $('#includetag').selectivity({
+            items: ['鳳梨', '蘋果', '健康', '排毒', '南瓜', '鳳梨酵素', '水果', '纖維'/*, ...*/],
+            multiple: true,
+            placeholder: '搜尋標籤'
+        });
+
+        $('#notag').selectivity({
+            items: ['鳳梨', '蘋果', '健康', '排毒', '南瓜', '鳳梨酵素', '水果', '纖維'/*, ...*/],
+            multiple: true,
+            placeholder: '搜尋標籤'
+        });
+
+
+    });</script>
+<script src="./js/selectivity-jquery.min.js"></script>
+
+
+</body>
+
+</html>

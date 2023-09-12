@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="css/selectivity-jquery.min.css">
-    
+
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.min.css"> -->
     <%- include('share/head_link.ejs') %>
@@ -44,185 +44,202 @@
                 <div class="row g-3">
                     <!-- card1 -->
                     <% for (let i=0; i < data.length; i++){ %>
-                        <div class="col-12 col-lg-6">
-                        <div class="card">
-                            <img src="<%- data[i].atcimg %>" class="card-img-top img-fluid" alt="art1">
-                            <div class="card-body">
-                                <h4 class="vg-h4 blogTitle">
-                                    <%= data[i].atcTitle %>
-                                </h4>
-                                <p class="vg-p blogView">
-                                    <%= data[i].atcText %>
-                                </p>
-                                <div class="articleIcon">
-                                    <a>
-                                        <div class="con-like">
-                                            <input title="like" type="checkbox" class="like check1">
-                                            <div class="checkmark">
-                                                <svg viewBox="0 0 24 24" class="outline"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
-                                                    </path>
-                                                </svg>
-                                                <svg viewBox="0 0 24 24" class="filled"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                                                    </path>
-                                                </svg>
-                                                <svg class="celebrate" width="100" height="100"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <polygon points="10,10 20,20" class="poly"></polygon>
-                                                    <polygon points="10,50 20,50" class="poly"></polygon>
-                                                    <polygon points="20,80 30,70" class="poly"></polygon>
-                                                    <polygon points="90,10 80,20" class="poly"></polygon>
-                                                    <polygon points="90,50 80,50" class="poly"></polygon>
-                                                    <polygon points="80,80 70,70" class="poly"></polygon>
-                                                </svg>
-                                            </div>
+                        <a href="/blog/inside/<%- data[i].atcid  %>">
+                            <div class="col-12 col-lg-6">
+                                <div class="card">
+                                    <img src="<%- data[i].atcimg %>" class="card-img-top img-fluid" alt="art1">
+                                    <div class="card-body">
+                                        <h4 class="vg-h4 blogTitle">
+                                            <%= data[i].atcTitle %>
+                                        </h4>
+                                        <p class="vg-p blogView">
+                                            <%= data[i].atcText %>
+                                        </p>
+                                        <div class="articleIcon">
+                                            <a>
+                                                <div class="con-like">
+                                                    <input title="like" type="checkbox" class="like check1">
+                                                    <div class="checkmark">
+                                                        <svg viewBox="0 0 24 24" class="outline"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                                                            </path>
+                                                        </svg>
+                                                        <svg viewBox="0 0 24 24" class="filled"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                                            </path>
+                                                        </svg>
+                                                        <svg class="celebrate" width="100" height="100"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <polygon points="10,10 20,20" class="poly"></polygon>
+                                                            <polygon points="10,50 20,50" class="poly"></polygon>
+                                                            <polygon points="20,80 30,70" class="poly"></polygon>
+                                                            <polygon points="90,10 80,20" class="poly"></polygon>
+                                                            <polygon points="90,50 80,50" class="poly"></polygon>
+                                                            <polygon points="80,80 70,70" class="poly"></polygon>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <p class="likePeople" style="margin-left: -12px; padding: 3px;"></p>
+                                            <a>
+                                                <div class="con-like con-keep">
+                                                    <input title="like" type="checkbox" class="like keep1">
+                                                    <div class="checkmark">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                            width="35px" height="35px" viewBox="0 0 24 24"
+                                                            class="outline">
+                                                            <path
+                                                                d="M 6.0097656 2 C 4.9143111 2 4.0097656 2.9025988 4.0097656 3.9980469 L 4 22 L 12 19 L 20 22 L 20 20.556641 L 20 4 C 20 2.9069372 19.093063 2 18 2 L 6.0097656 2 z M 6.0097656 4 L 18 4 L 18 19.113281 L 12 16.863281 L 6.0019531 19.113281 L 6.0097656 4 z">
+                                                            </path>
+                                                        </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                            width="35px" height="35px" viewBox="0 0 24 24"
+                                                            class="filled">
+                                                            <path
+                                                                d="M 6 2 C 5.861875 2 5.7278809 2.0143848 5.5976562 2.0410156 C 4.686084 2.2274316 4 3.033125 4 4 L 4 22 L 12 19 L 20 22 L 20 4 C 20 3.8625 19.985742 3.7275391 19.958984 3.5976562 C 19.799199 2.8163086 19.183691 2.2008008 18.402344 2.0410156 C 18.272119 2.0143848 18.138125 2 18 2 L 6 2 z">
+                                                            </path>
+                                                        </svg>
+                                                        <svg class="celebrate" width="100" height="100"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <polygon points="10,10 20,20" class="poly"></polygon>
+                                                            <polygon points="10,50 20,50" class="poly"></polygon>
+                                                            <polygon points="20,80 30,70" class="poly"></polygon>
+                                                            <polygon points="90,10 80,20" class="poly"></polygon>
+                                                            <polygon points="90,50 80,50" class="poly"></polygon>
+                                                            <polygon points="80,80 70,70" class="poly"></polygon>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
-                                    </a>
-                                    <p class="likePeople" style="margin-left: -12px; padding: 3px;"></p>
-                                    <a>
-                                        <div class="con-like con-keep">
-                                            <input title="like" type="checkbox" class="like keep1">
-                                            <div class="checkmark">
-                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35px"
-                                                    height="35px" viewBox="0 0 24 24" class="outline">
-                                                    <path
-                                                        d="M 6.0097656 2 C 4.9143111 2 4.0097656 2.9025988 4.0097656 3.9980469 L 4 22 L 12 19 L 20 22 L 20 20.556641 L 20 4 C 20 2.9069372 19.093063 2 18 2 L 6.0097656 2 z M 6.0097656 4 L 18 4 L 18 19.113281 L 12 16.863281 L 6.0019531 19.113281 L 6.0097656 4 z">
-                                                    </path>
-                                                </svg>
-                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35px"
-                                                    height="35px" viewBox="0 0 24 24" class="filled">
-                                                    <path
-                                                        d="M 6 2 C 5.861875 2 5.7278809 2.0143848 5.5976562 2.0410156 C 4.686084 2.2274316 4 3.033125 4 4 L 4 22 L 12 19 L 20 22 L 20 4 C 20 3.8625 19.985742 3.7275391 19.958984 3.5976562 C 19.799199 2.8163086 19.183691 2.2008008 18.402344 2.0410156 C 18.272119 2.0143848 18.138125 2 18 2 L 6 2 z">
-                                                    </path>
-                                                </svg>
-                                                <svg class="celebrate" width="100" height="100"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <polygon points="10,10 20,20" class="poly"></polygon>
-                                                    <polygon points="10,50 20,50" class="poly"></polygon>
-                                                    <polygon points="20,80 30,70" class="poly"></polygon>
-                                                    <polygon points="90,10 80,20" class="poly"></polygon>
-                                                    <polygon points="90,50 80,50" class="poly"></polygon>
-                                                    <polygon points="80,80 70,70" class="poly"></polygon>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <%　}　%>
+
+                                <div class="blog_page">
+                                    <ul class="gap-3 pageset">
+                                        <% for (let i=1; i <=last_page; i++){ %>
+
+                                            <a href="<%= i %>">
+                                                <%= i %>
+                                            </a> &nbsp;&nbsp;
+
+                                            <% } %>
+
+                                                <a href="/blog/page/<%= next_page %>">
+                                                    下一頁
+                                                </a> &nbsp;&nbsp;
+                                    </ul>
+                                </div>
+                        </a>
+                </div>
+
+
+                <!-- article end -->
+                <!-- rightrow -->
+                <div class="col-md-5 col-lg-3 vg-bd-5 border rightRow">
+                    <!-- search -->
+                    <div class="d-flex m-3 searchRow">
+                        <div class="form-floating mb-3 w-75">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="搜尋">
+                            <label for="floatingInput">搜尋</label>
+                        </div>
+                        <button class="btn btn-vg serchButton"><i class="bi bi-search"></i></button>
+
+
+                    </div>
+                    <div class="d-flex justify-content-center searchMore">
+                        <h5 class="vg-h4">進階搜尋</h5>
+                        <button class="btn btn-vg-sm"><i class="bi bi-caret-down-square-fill ps-2"></i></button>
+                    </div>
+                    <div class="searchMoredown">
+                        <div class="m-3">
+                            <h5 class="vg-h5">包含標籤</h5>
+                            <div id="includetag" class="form-floating mb-3 w-75 selectivity-input example-input"
+                                tabindex="0">
+                                <div class="selectivity-multiple-input-container form-floating">
+                                    <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
+                                        class="form-control selectivity-multiple-input" size="23">
+                                    <div class="selectivity-clearfix"></div>
+
                                 </div>
                             </div>
                         </div>
-                </div>
-                <%　}　%>
+                        <div class="m-3">
+                            <h5 class="vg-h5">排除標籤</h5>
+                            <div id="notag" class="form-floating mb-3 w-75 selectivity-input example-input"
+                                tabindex="0">
+                                <div class="selectivity-multiple-input-container form-floating">
+                                    <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
+                                        class="form-control selectivity-multiple-input" size="23">
+                                    <div class="selectivity-clearfix"></div>
 
-                <div class="blog_page">
-                    <ul class="gap-3 pageset">
-                        <% for (let i=1; i <=last_page; i++){ %>
-
-                            <a href="<%= i %>">
-                                <%= i %>
-                            </a> &nbsp;&nbsp;
-                    
-                            <% } %>
-
-                            <a href="/blog/page/<%= next_page %>">
-                                下一頁
-                            </a> &nbsp;&nbsp;
-                    </ul>
-                </div>
-            </div>
-
-
-            <!-- article end -->
-            <!-- rightrow -->
-            <div class="col-md-5 col-lg-3 vg-bd-5 border rightRow">
-                <!-- search -->
-                <div class="d-flex m-3 searchRow">
-                    <div class="form-floating mb-3 w-75">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="搜尋">
-                        <label for="floatingInput">搜尋</label>
-                    </div>
-                    <button class="btn btn-vg serchButton"><i class="bi bi-search"></i></button>
-
-
-                </div>
-                <div class="d-flex justify-content-center searchMore">
-                    <h5 class="vg-h4">進階搜尋</h5>
-                    <button class="btn btn-vg-sm"><i class="bi bi-caret-down-square-fill ps-2"></i></button>
-                </div>
-                <div class="searchMoredown">
-                    <div class="m-3">
-                        <h5 class="vg-h5">包含標籤</h5>
-                        <div id="includetag" class="form-floating mb-3 w-75 selectivity-input example-input"
-                            tabindex="0">
-                            <div class="selectivity-multiple-input-container form-floating">
-                                <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
-                                    class="form-control selectivity-multiple-input" size="23">
-                                <div class="selectivity-clearfix"></div>
-
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="m-3">
-                        <h5 class="vg-h5">排除標籤</h5>
-                        <div id="notag" class="form-floating mb-3 w-75 selectivity-input example-input" tabindex="0">
-                            <div class="selectivity-multiple-input-container form-floating">
-                                <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
-                                    class="form-control selectivity-multiple-input" size="23">
-                                <div class="selectivity-clearfix"></div>
 
-                            </div>
-                        </div>
+                        <button class="btn btn-vg m-2 shadow-sm" style="background-color: red solid 3px;">送出</button>
+                        <br><br>
                     </div>
 
-                    <button class="btn btn-vg m-2 shadow-sm" style="background-color: red solid 3px;">送出</button>
-                    <br><br>
-                </div>
-
-                <!-- search end -->
-                <hr>
-                <!-- hot -->
-                <div>
-                    <h4 class="vg-h4 mt-3 ">熱門標籤</h4>
-                    <div class="hotTag d-flex flex-wrap justify-content-center gap-1">
-
-                    </div>
+                    <!-- search end -->
                     <hr>
+                    <!-- hot -->
                     <div>
-                        <h4 class="vg-h4 mt-3">熱門文章</h4>
-                        <div class="hotArt">
-                            <div class="d-flex mt-3">
-                                <img src="<%= data[1].atcimg %>" alt="">
-                                <div class="hotArtcontent">
-                                    <p class="vg-h5 hottitle"><%= data[1].atcTitle %></p>
-                                    <span class="vg-p hotspan"><%= data[1].atcText %></span>
+                        <h4 class="vg-h4 mt-3 ">熱門標籤</h4>
+                        <div class="hotTag d-flex flex-wrap justify-content-center gap-1">
+
+                        </div>
+                        <hr>
+                        <div>
+                            <h4 class="vg-h4 mt-3">熱門文章</h4>
+                            <div class="hotArt">
+                                <div class="d-flex mt-3">
+                                    <img src="<%= data[1].atcimg %>" alt="">
+                                    <div class="hotArtcontent">
+                                        <p class="vg-h5 hottitle">
+                                            <%= data[1].atcTitle %>
+                                        </p>
+                                        <span class="vg-p hotspan">
+                                            <%= data[1].atcText %>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="d-flex mt-3">
-                                <img src="<%= data[5].atcimg %>" alt="">
-                                <div class="hotArtcontent">
-                                    <p class="vg-h5 hottitle"><%= data[5].atcTitle %></p>
-                                    <span class="vg-p hotspan"><%= data[5].atcText %></span>
+                                <div class="d-flex mt-3">
+                                    <img src="<%= data[5].atcimg %>" alt="">
+                                    <div class="hotArtcontent">
+                                        <p class="vg-h5 hottitle">
+                                            <%= data[5].atcTitle %>
+                                        </p>
+                                        <span class="vg-p hotspan">
+                                            <%= data[5].atcText %>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="d-flex mt-3">
-                                <img src="<%= data[4].atcimg %>" alt="">
-                                <div class="hotArtcontent">
-                                    <p class="vg-h5 hottitle"><%= data[4].atcTitle %></p>
-                                    <span class="vg-p hotspan"><%= data[4].atcText %></span>
+                                <div class="d-flex mt-3">
+                                    <img src="<%= data[4].atcimg %>" alt="">
+                                    <div class="hotArtcontent">
+                                        <p class="vg-h5 hottitle">
+                                            <%= data[4].atcTitle %>
+                                        </p>
+                                        <span class="vg-p hotspan">
+                                            <%= data[4].atcText %>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
 
-                <!-- hot end -->
-            </div>
-            <!-- wrap end-->
+
+                    <!-- hot end -->
+                </div>
+                <!-- wrap end-->
 
             </div>
 
@@ -292,34 +309,34 @@
                     });
                 })
             </script>
-                <script>$(document).ready(function () {
+            <script>$(document).ready(function () {
                     var itemTag = [];
                     fetch('/blog/tags')
-                    .then(function(res){
-                        return res.json();
-                    })
-                    .then(function(jsonObj){
-                        // console.log(jsonObj[0].tagname);
-                        for(var i = 1; i<jsonObj.length; i++){
-                            itemTag.push(jsonObj[i].tagname);
-                        }
-                        $('#includetag').selectivity({
-                        items: itemTag,
-                        multiple: true,
-                        placeholder: '搜尋標籤'
-                    });
-                        $('#notag').selectivity({
-                        items: itemTag,
-                        multiple: true,
-                        placeholder: '搜尋標籤'
-                    });
-                    for(let i = 1; i<9; i++){
-                        // console.log($('.hotTag'));
-                        $('.hotTag').prepend(`<a href=""><button class="btn btn-vg-xs shadow-sm">${itemTag[i]}</button></a>`);
-                        }
-                    })
+                        .then(function (res) {
+                            return res.json();
+                        })
+                        .then(function (jsonObj) {
+                            // console.log(jsonObj[0].tagname);
+                            for (var i = 1; i < jsonObj.length; i++) {
+                                itemTag.push(jsonObj[i].tagname);
+                            }
+                            $('#includetag').selectivity({
+                                items: itemTag,
+                                multiple: true,
+                                placeholder: '搜尋標籤'
+                            });
+                            $('#notag').selectivity({
+                                items: itemTag,
+                                multiple: true,
+                                placeholder: '搜尋標籤'
+                            });
+                            for (let i = 1; i < 9; i++) {
+                                // console.log($('.hotTag'));
+                                $('.hotTag').prepend(`<a href=""><button class="btn btn-vg-xs shadow-sm">${itemTag[i]}</button></a>`);
+                            }
+                        })
 
-            
+
                 });</script>
 </body>
 
