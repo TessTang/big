@@ -336,26 +336,26 @@
                             });
                             for (let i = 1; i < 10; i++) {
                                 // console.log($('.hotTag'));
-                                $('.hotTag').prepend(`<a href=""><button class="btn btn-vg-xs shadow-sm">${itemTag[i]}</button></a>`);
+                                $('.hotTag').prepend(`<a href="/blog/tag/${jsonObj[i].tagid}"><button class="btn btn-vg-xs shadow-sm">${jsonObj[i].tagname}</button></a>`);
                             }
                         })
-                        let tagxatcid = [];
+                        // let tagxatcid = [];
 
-                        fetch('/blog/tag/:id')
-                        .then(function (res) {
-                            return res.json();
-                        })
-                        .then(function (jsonObj) {
-                            console.log(jsonObj[0].atcid);
-                            for (var i = 1; i < jsonObj.length; i++) {
-                                tagxatcid.push(jsonObj[i].atcid);
-                            }
+                        // fetch('/blog/tag/:id')
+                        // .then(function (res) {
+                        //     return res.json();
+                        // })
+                        // .then(function (jsonObj) {
+                        //     console.log(jsonObj[0].atcid);
+                        //     for (var i = 1; i < jsonObj.length; i++) {
+                        //         tagxatcid.push(jsonObj[i].atcid);
+                        //     }
                             
-                            for (let i = 1; i < jsonObj.length; i++) {
-                                // console.log($('.hotTag'));
-                                $('.hotTag>a').attr('href',`/blog/tag/${tagxatcid[i]}`);
-                            }
-                        })
+                        //     for (let i = 1; i < jsonObj.length; i++) {
+                        //         // console.log($('.hotTag'));
+                        //         $('.hotTag>a').prop('href',`/blog/tag/${tagxatcid[i]}`);
+                        //     }
+                        // })
 
 
 

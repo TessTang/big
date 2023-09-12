@@ -60,6 +60,7 @@ blog.get('/tags', function(req, res){
             console.log(err);
         } else {
             console.log('資料抓成功');
+            console.log(tags);
             res.json(tags);
         }
     })
@@ -76,7 +77,14 @@ blog.get('/tag/:id', function(req, res){
             console.log(err);
         } else {
             console.log('tagid抓成功');
-            res.json(tags);
+            // res.json(tags);
+            res.render('blog',{
+                data: tags,
+                curr_page: 1,
+                next_page: 2,
+                total_nums: 2,
+                last_page: 1
+            })
         }
     })
 })
