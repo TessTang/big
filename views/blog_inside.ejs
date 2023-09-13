@@ -119,7 +119,7 @@
                     Post Tags: </span>
                 <div class="gap-2 postTag d-flex pt-3">
                     <% data.tags.forEach(function(tag) { %>
-                    <a href=""><button class="btn btn-vg-xs shadow-sm"><%- tag.tagname %></button></a>
+                    <a href="/blog/tag/<%- tag.tagid %>"><button class="btn btn-vg-xs shadow-sm"><%- tag.tagname %></button></a>
                     <% }); %>
 
                 </div>
