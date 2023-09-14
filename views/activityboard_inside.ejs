@@ -40,29 +40,31 @@
             <div class="container d-flex flex-md-row flex-column-reverse gap-3 mb-4">
 
                 <!-- 左邊文章col -->
-                <div class="border vg-bd-5 actcol">
-                    <!-- col1 -->
-                    <% for (let i=0 ; i < data.length; i++){ %>
+                <div class="container d-flex flex-md-row flex-column-reverse gap-3 mb-4">
 
-                        <div class="content d-flex gap-3">
-                            <div class="contentImg col-4">
-                                <img src="<%= data[i].actImg %>" alt="">
-                            </div>
-                            <div>
-                                <a class="activitycmta" href="/activityboard/inside/<%- data[i].actid  %>"></a>
-                                <h4 class="vg-h4">
-                                    <%= data[i].actTitle %>
-                                </h4>
-                                <p class="actviewp mt-3">
-                                    <%= data[i].actText %>
-                                </p>
-                            </div>
-                        </div>
-
-                        <% } %>
-
-
-                </div>
+                    <!-- 左邊文章col -->
+                    <div class="border vg-bd-5 actcol p-3 gap-3">
+                        <h3 class="vg-h3"><%= data[0].actTitle %></h3>
+                        <div class="text-end">2023/09/08</div>
+                        <img class="img-fluid" src="./img/act-coffe.jpg">
+                        <p><strong><span style="color: #993300;">❄低溫店取選7-ELEVEN超商❄取件完成就送【CITY CAFE中杯冰拿鐵】，共500杯，讓你線上買菜又消暑。</span></strong>
+                        </p>
+                        <p>*每筆訂單贈乙杯，共500杯，數量有限，送完為止。</p>
+                    
+                        <p><strong><span style="color: #993300;">活動說明：</span></strong>
+                        </p>
+                        <ol>
+                            <li>活動日期：2023/09/15至2023/10/15</li>
+                            <li>兌換序號將於取件完成14天內，以Line@或簡訊發放。</li>
+                            <li>兌換期限：即日起至2023/10/30，逾期失效恕不補發。</li>
+                            <li>訂單出貨後若有修改、變更及退貨退款之情形致最終未符合活動規則，將不提供兌換序號。</li>
+                            <li>悠活農村保有隨時修改活動辦法及贈品或中止本活動或變更同等價值商品之權利。</li>
+                            <li>參加者於參加本活動之同時，即同意接受本活動之活動辦法與規範。</li>
+                            <li>若有任何問題請上班時間致電客服<a href="tel:02-27480366">00-1234-5678</a>。</li>
+                        </ol>
+            
+            
+                    </div>
                 <!-- 右邊常駐活動 -->
                 <div class="col-md-5 col-lg-3">
                     <div class="d-flex-column text-center border vg-bd-5 p-3 h-100">

@@ -91,6 +91,31 @@ blog.get('/tag/:id', function(req, res){
     })
 })
 
+
+
+
+blog.get('category/:id', function(req, res){
+    var art_id2 = req.params.id;
+    var sql3 = "SELECT * FROM article WHERE atcCat = ?;"
+    var data = [req.params.id];
+    db.query(sql3, data, function(err, tags){
+        if(err){
+            console.log('category沒抓成功');
+            console.log(err);
+        } else {
+            console.log('category抓成功');
+            // res.json(tags);
+            res.render('blog',{
+                data: tags,
+                curr_page: 1,
+                next_page: 2,
+                total_nums: 2,
+                last_page: 1
+            })
+        }
+    })
+})
+
 blog.post('/search', jp, function(req, res){
     var sql6 = req.body.search;
     // var data = [req.body.search];

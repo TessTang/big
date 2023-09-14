@@ -258,15 +258,15 @@
 
                 $('#qna').addClass('btn-vg-2-active');
                 $('#title1').text('全部分類');
-                $('#title1').prop('href', '#qa1');
+                $('#title1').prop('href', '/blog/page/1');
                 $('#title2').text('農產品');
                 $('#title2').prop('href', '#qa2');
                 $('#title3').text('健康');
                 $('#title3').prop('href', '#qa3');
                 $('#title4').text('食譜');
-                $('#title4').prop('href', '#qa4');
+                $('#title4').prop('href', 'blog/category/<%= data[1].atcCat %>');
                 $('#title5').text('小農介紹');
-                $('#title5').prop('href', '#qa5');
+
 
                 $(function () {
                     $(`#qa1`).on({
@@ -342,6 +342,17 @@
                                 $('.hotTag').prepend(`<a href="/blog/tag/${jsonObj[i].tagid}"><button class="btn btn-vg-xs shadow-sm">${jsonObj[i].tagname}</button></a>`);
                             }
                         })
+
+                        // fetch('/blog/category')
+                        // .then(function (res) {
+                        //     return res.json();
+                        // })
+                        // .then(function (jsonObj) {
+                        //     console.log(jsonObj,'test')
+                        //     $('#title5').prop('href', `/blog/category/${jsonObj[0].atc}`);
+                        // })
+
+
 
                     let includeTag = 0;
                     $('#includetag').on('change', function () {
