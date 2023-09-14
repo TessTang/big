@@ -93,8 +93,7 @@ blog.get('/tag/:id', function(req, res){
 
 
 
-
-blog.get('category/:id', function(req, res){
+blog.get('/category/:id', function(req, res){
     var art_id2 = req.params.id;
     var sql3 = "SELECT * FROM article WHERE atcCat = ?;"
     var data = [req.params.id];
@@ -139,39 +138,66 @@ blog.post('/search', jp, function(req, res){
 })
 
 
-
-
-
 blog.get('/inside/:id', function(req, res){
     var art_id = req.params.id;
     var sql2 = "SELECT * FROM article WHERE atcid = ?;";
-    var sql4 = "SELECT * FROM article,atcxtag,tag WHERE article.atcid = atcxtag.atcid AND atcxtag.tagid = tag.tagid AND article.atcid = ?;";
-    
-    // 第一次查詢
+    var sql4 = "SELECT * FROM article, atcxtag, tag WHERE article.atcid = atcxtag.atcid AND atcxtag.tagid = tag.tagid AND article.atcid = ?;";
+    var sql7 = "SELECT * FROM comment WHERE atcid = ?;"; // 修改此处查询语句
+
+    // 第一次查询
     db.query(sql2, [art_id], function(err, result1){
         if(err){
             console.log('抓文章失敗');
             console.log(err);
         } else {
-            // 第二次查詢
+            // 第二次查询
             db.query(sql4, [art_id], function(err, result2){
                 if(err){
                     console.log('抓取文章標籤失敗');
                     console.log(err);
                 } else {
-                    console.log(result1);
-                    console.log(result2);
-                    res.render('blog_inside',{
-                        data: {
-                            article: result1,
-                            tags: result2
-                        },
+                    // 第三次查询
+                    db.query(sql7, [art_id], function(err, result3){
+                        if(err){
+                            console.log('抓取评论失败');
+                            console.log(err);
+                        } else {
+                            console.log(result1);
+                            console.log(result2);
+                            console.log(result3);
+                            res.render('blog_inside',{
+                                data: {
+                                    article: result1,
+                                    tags: result2,
+                                    comments: result3
+                                },
+                            });
+                        }
                     });
                 }
             });
         }
     });
 });
+
+
+// insidecommentpost
+blog.post('/postcom', jp, function(req, res){
+    var sql6 = req.body.postcom;
+    const sql =
+    `INSERT INTO comment(uid, atcid, cmtText) VALUES (1001, ${sql6});`
+    db.query(sql6, function(err, tags){
+        if(err){
+            console.log('post沒抓成功');
+            console.log(err);
+        } else {
+            console.log('post抓成功');
+            console.log(tags);
+
+        }
+    })
+})
+
 
 
 

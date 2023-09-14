@@ -250,7 +250,7 @@
 
             </div>
 
-            <script src="js/style.js"></script>
+            <script src="js/blogact.js"></script>
             <script src="js/selectivity-jquery.min.js"></script>
             <script>
                 var a = <%= curr_page %>;
@@ -260,13 +260,13 @@
                 $('#title1').text('全部分類');
                 $('#title1').prop('href', '/blog/page/1');
                 $('#title2').text('農產品');
-                $('#title2').prop('href', '#qa2');
+                $('#title2').prop('href', '/blog/category/1');
                 $('#title3').text('健康');
-                $('#title3').prop('href', '#qa3');
+                $('#title3').prop('href', '/blog/category/2');
                 $('#title4').text('食譜');
-                $('#title4').prop('href', 'blog/category/<%= data[1].atcCat %>');
+                $('#title4').prop('href', '/blog/category/3');
                 $('#title5').text('小農介紹');
-
+                $('#title5').prop('href', '/blog/category/4');
 
                 $(function () {
                     $(`#qa1`).on({
@@ -342,16 +342,6 @@
                                 $('.hotTag').prepend(`<a href="/blog/tag/${jsonObj[i].tagid}"><button class="btn btn-vg-xs shadow-sm">${jsonObj[i].tagname}</button></a>`);
                             }
                         })
-
-                        // fetch('/blog/category')
-                        // .then(function (res) {
-                        //     return res.json();
-                        // })
-                        // .then(function (jsonObj) {
-                        //     console.log(jsonObj,'test')
-                        //     $('#title5').prop('href', `/blog/category/${jsonObj[0].atc}`);
-                        // })
-
 
 
                     let includeTag = 0;

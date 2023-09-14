@@ -409,6 +409,10 @@ padding-left: 50px;
     padding-top: 1rem;
 }
 
+.media-body{
+    width: 100%;
+}
+
 /* activity */
 .actcol>a {
     text-decoration: none;
